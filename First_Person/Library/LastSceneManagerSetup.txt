@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Level1.unity
+- path: C:/Users/Brayden/AppData/Local/Temp/Temp2_UnityFirstPersonShooter-master.zip/UnityFirstPersonShooter-master/FirstPerson/Assets/Scenes/Level1.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -1,22 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Bullet : MonoBehaviour
 {
     [SerializeField]
     float bulletLifetime;
 
+    [SerializeField]
+    int enemysLeft = 3;
 
     [SerializeField]
     int goToLevel = 0;
 
-    [SerializeField]
-    //Image bar;
-    int count = 3;
-
     float elapsed = 0;
-
 
     // Start is called before the first frame update
     void Start()
@@ -31,15 +29,22 @@ public class Bullet : MonoBehaviour
 
         if (elapsed >= bulletLifetime)
             Destroy(gameObject);
+
+
     }
 
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            enemysLeft = enemysLeft - 1;
+            Debug.Log(enemysLeft);
             Destroy(collision.gameObject);
             Destroy(gameObject);
-            PlayerShoot.instance.UpdateEnemy();
+        }
+        if (enemysLeft == 0)
+        {
+            SceneManager.LoadScene(goToLevel);
         }
 
     }

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using JetBrains.Annotations;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,7 +15,11 @@ public class PlayerMovement : MonoBehaviour
     float rotSpeed2 = 0;
 
     [SerializeField]
+    Transform CameraPivot;
+
+    [SerializeField]
     Transform lookUpDown;
+
 
 
     [SerializeField]
@@ -26,13 +32,11 @@ public class PlayerMovement : MonoBehaviour
     Transform cam;
 
     [SerializeField]
-    int goToLevel2 = 0;
-
-    [SerializeField]
-    float playerHp = 60;
-
-    [SerializeField]
     int goToLevel = 0;
+
+    [SerializeField]
+    //Image bar;
+    int PlayerHp = 60;
 
     public bool isGrounded;
 
@@ -42,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        UpdateHUD();
+        //UpdateHUD();
     }
 
     // Update is called once per frame
@@ -51,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
         float x = Input.GetAxis("Mouse X");
         float y = Input.GetAxis("Mouse Y");
 
-        transform.Rotate(new Vector3(0, x * rotSpeed, 0));
+        CameraPivot.Rotate(new Vector3(0, x * rotSpeed, 0));
         lookUpDown.Rotate(new Vector3(y * rotSpeed2, 0, 0));
 
         float h = Input.GetAxis("Horizontal");
@@ -85,35 +89,39 @@ public class PlayerMovement : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
         }
+
+
     }
+
+
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("ground"))
-        {
-            isGrounded = true;
-        }
-
-    }
-
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("AmmoBox"))
-        {
-            Destroy(collision.gameObject);
-            PlayerShoot.instance.UpdateAmmo();
-        }
         if (collision.gameObject.CompareTag("KillZone"))
         {
             SceneManager.LoadScene(goToLevel);
         }
+        if (collision.gameObject.CompareTag("ground"))
+        {
+            isGrounded = true;
+        }
+        /*if (collision.gameObject.CompareTag("AmmoBox"))
+        {
+            Destroy(collision.gameObject);
+            PlayerShoot.instance.UpdateAmmo();
+        }*/
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
         if (collision.gameObject.CompareTag("Spike"))
         {
-            playerHp -= 1;
-            Debug.Log(playerHp);
+            PlayerHp -= 1;
+            Debug.Log(PlayerHp);
+            //UpdateHUD();
         }
 
-        if (playerHp == 0)
+        if (PlayerHp == 0)
         {
             SceneManager.LoadScene(goToLevel);
         }
@@ -126,6 +134,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = false;
         }
+
     }
 
     void UpdateHUD()
