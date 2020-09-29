@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerShoot : MonoBehaviour
 {
+    public static PlayerShoot instance;
     [SerializeField]
     GameObject bullet;
 
@@ -27,6 +28,7 @@ public class PlayerShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         UpdateHUD();
     }
 

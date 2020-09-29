@@ -98,6 +98,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
+        if (collision.gameObject.CompareTag("AmmoBox"))
+        {
+            Destroy(collision.gameObject);
+            PlayerShoot.instance.UpdateAmmo();
+        }
+        if (collision.gameObject.CompareTag("KillZone"))
+        {
+            SceneManager.LoadScene(goToLevel);
+        }
         if (collision.gameObject.CompareTag("Spike"))
         {
             playerHp -= 1;
