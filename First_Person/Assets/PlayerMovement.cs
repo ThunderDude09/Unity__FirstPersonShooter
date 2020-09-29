@@ -7,6 +7,16 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
+    float rotSpeed = 0;
+
+    [SerializeField]
+    float rotSpeed2 = 0;
+
+    [SerializeField]
+    Transform lookUpDown;
+
+
+    [SerializeField]
     float moveSpeed = 1;
 
     [SerializeField]
@@ -38,6 +48,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        float x = Input.GetAxis("Mouse X");
+        float y = Input.GetAxis("Mouse Y");
+
+        transform.Rotate(new Vector3(0, x * rotSpeed, 0));
+        lookUpDown.Rotate(new Vector3(y * rotSpeed2, 0, 0));
+
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         bool player_jump = Input.GetButtonDown("Jump");
