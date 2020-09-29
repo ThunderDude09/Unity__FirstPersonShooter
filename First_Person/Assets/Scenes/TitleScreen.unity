@@ -513,8 +513,8 @@ MonoBehaviour:
   goToLevel: 1
   goToLevel2: 1
   goToLevel3: 0
-  buttonText: {fileID: 0}
-  myButton: {fileID: 0}
+  buttonText: {fileID: 1722420804}
+  myButton: {fileID: 1367188725}
 --- !u!1 &1367188723
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,12 +597,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1341368721}
-        m_MethodName: 
+      - m_Target: {fileID: 1341368726}
+        m_MethodName: PressStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
