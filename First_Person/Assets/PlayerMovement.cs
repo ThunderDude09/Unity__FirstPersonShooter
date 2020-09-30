@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     int goToLevel = 0;
 
     [SerializeField]
-    Image bar;
+    //Image bar;
     int PlayerHp = 60;
 
     public bool isGrounded;
@@ -99,20 +99,18 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("KillZone"))
         {
-            Destroy(gameObject);
             SceneManager.LoadScene(goToLevel);
         }
         if (collision.gameObject.CompareTag("ground"))
         {
             isGrounded = true;
         }
-        if (collision.gameObject.CompareTag("AmmoBox"))
+        /*if (collision.gameObject.CompareTag("AmmoBox"))
         {
             Destroy(collision.gameObject);
-            //PlayerShoot.instance.UpdateAmmo();
-        }
+            PlayerShoot.instance.UpdateAmmo();
+        }*/
     }
-    
 
     private void OnCollisionStay(Collision collision)
     {
@@ -120,12 +118,11 @@ public class PlayerMovement : MonoBehaviour
         {
             PlayerHp -= 1;
             Debug.Log(PlayerHp);
-            UpdateHUD();
+            //UpdateHUD();
         }
 
         if (PlayerHp == 0)
         {
-            Destroy(gameObject);
             SceneManager.LoadScene(goToLevel);
         }
     }
@@ -142,6 +139,6 @@ public class PlayerMovement : MonoBehaviour
 
     void UpdateHUD()
     {
-        bar.fillAmount = (float)PlayerHp / 60;
+        //bar.fillAmount = (float)PlayerHp / 60;
     }
 }
