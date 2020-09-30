@@ -24,13 +24,23 @@ public class PlayerShoot : MonoBehaviour
     public int ammo = 30;
 
     [SerializeField]
+    Image bar2;
     int count = 3;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (instance == null)
+        {
+            instance = this;
+        }
+
+        if (instance != this)
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
         UpdateHUD();
+        UpdateHUD2();
     }
 
     // Update is called once per frame
@@ -61,6 +71,7 @@ public class PlayerShoot : MonoBehaviour
     {
         count = count - 1;
         Debug.Log(count);
+        UpdateHUD2();
         if (count == 0)
         {
             SceneManager.LoadScene(goToLevel);
@@ -70,5 +81,10 @@ public class PlayerShoot : MonoBehaviour
     void UpdateHUD()
     {
         bar.fillAmount = (float)ammo / 30;
+    }
+
+    void UpdateHUD2()
+    {
+        bar2.fillAmount = (float)count / 3;
     }
 }

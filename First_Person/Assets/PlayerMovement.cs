@@ -107,6 +107,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("KillZone"))
         {
+            Destroy(gameObject);
             SceneManager.LoadScene(goToLevel);
         }
         if (collision.gameObject.CompareTag("Spike"))
@@ -118,6 +119,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (playerHp == 0)
         {
+            Destroy(gameObject);
             SceneManager.LoadScene(goToLevel);
         }
     }
