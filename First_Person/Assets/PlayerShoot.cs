@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 
 public class PlayerShoot : MonoBehaviour
 {
+    public static PlayerShoot instance;
     [SerializeField]
     GameObject bullet;
 
@@ -22,8 +23,9 @@ public class PlayerShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //UpdateHUD();
         
+        //UpdateHUD();
+
     }
 
     // Update is called once per frame
@@ -33,28 +35,26 @@ public class PlayerShoot : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             
-
-            Vector3 bulletDirection = transform.forward * bulletSpeed;
-            GameObject b = Instantiate(bullet, gunBarrel.position, transform.rotation);
-            b.GetComponent<Rigidbody>().velocity = bulletDirection;
-            //ammo -= 1;
+            ammo -= 1;
 
             //UpdateHUD();
 
             if (ammo > 0)
             {
-                
+                Vector3 bulletDirection = transform.forward * bulletSpeed;
+                GameObject b = Instantiate(bullet, gunBarrel.position, gunBarrel.rotation);
+                b.GetComponent<Rigidbody>().velocity = bulletDirection;
             }
         }
     }
 
-    /*public void UpdateAmmo()
+    public void UpdateAmmo()
     {
         ammo = 30;
-        UpdateHUD();
+        //UpdateHUD();
     }
 
-    void UpdateHUD()
+    /*void UpdateHUD()
     {
         //bar.fillAmount = (float)ammo / 30;
     }*/

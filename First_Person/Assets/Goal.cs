@@ -19,4 +19,5 @@ public class Goal : MonoBehaviour
         SceneManager.LoadScene(goToLevel);
         GameManager.instance.AddScore(goToLevel + 1);
     }
+    
 }

@@ -1532,6 +1532,7 @@ GameObject:
   - component: {fileID: 1568193729}
   - component: {fileID: 1568193728}
   - component: {fileID: 1568193727}
+  - component: {fileID: 1568193731}
   m_Layer: 0
   m_Name: KillZone
   m_TagString: KillZone
@@ -1613,6 +1614,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1568193731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568193726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3c222a9a542a0540bb2a9c18dd31579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goToLevel: 2
 --- !u!1 &1653876732
 GameObject:
   m_ObjectHideFlags: 0
@@ -2045,7 +2059,7 @@ MonoBehaviour:
   jumpSpeed: 7
   cam: {fileID: 1993454224}
   goToLevel: 2
-  PlayerHp: 60
+  bar: {fileID: 0}
   isGrounded: 0
 --- !u!65 &1842105358
 BoxCollider:
@@ -2151,11 +2165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381d906a552f5f34f81b82ef439b8767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotSpeed: 5
-  rotSpeed2: -5
   bullet: {fileID: 2499738512369732557, guid: 525b7e68c40ce704e90ebddb76dbb10c, type: 3}
   gunBarrel: {fileID: 515829827}
-  gunBody: {fileID: 0}
   bulletSpeed: 20
   ammo: 30
 --- !u!1 &1842267448
