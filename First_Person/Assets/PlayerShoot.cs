@@ -74,6 +74,7 @@ public class PlayerShoot : MonoBehaviour
         UpdateHUD2();
         if (count == 0)
         {
+            Destroy(gameObject);
             SceneManager.LoadScene(goToLevel);
         }
     }
