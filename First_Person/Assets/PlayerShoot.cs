@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerShoot : MonoBehaviour
@@ -19,7 +20,7 @@ public class PlayerShoot : MonoBehaviour
     int goToLevel = 0;
 
     [SerializeField]
-    //Image bar;
+    Image bar;
     public int ammo = 30;
 
     [SerializeField]
@@ -37,9 +38,16 @@ public class PlayerShoot : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Vector3 bulletDirection = gunBarrel.forward * bulletSpeed;
-            GameObject b = Instantiate(bullet, gunBarrel.position, transform.rotation);
-            b.GetComponent<Rigidbody>().velocity = bulletDirection;
+            
+
+            ammo -= 1;
+            UpdateHUD();
+            if (ammo > 0)
+            {
+                Vector3 bulletDirection = gunBarrel.forward * bulletSpeed;
+                GameObject b = Instantiate(bullet, gunBarrel.position, transform.rotation);
+                b.GetComponent<Rigidbody>().velocity = bulletDirection;
+            }
         }
     }
 
@@ -61,6 +69,6 @@ public class PlayerShoot : MonoBehaviour
 
     void UpdateHUD()
     {
-        //bar.fillAmount = (float)ammo / 30;
+        bar.fillAmount = (float)ammo / 30;
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
@@ -29,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     int goToLevel2 = 0;
 
     [SerializeField]
+    Image bar;
     float playerHp = 60;
 
     [SerializeField]
@@ -111,6 +113,7 @@ public class PlayerMovement : MonoBehaviour
         {
             playerHp -= 1;
             Debug.Log(playerHp);
+            UpdateHUD();
         }
 
         if (playerHp == 0)
@@ -130,6 +133,6 @@ public class PlayerMovement : MonoBehaviour
 
     void UpdateHUD()
     {
-        //bar.fillAmount = (float)PlayerHp / 60;
+        bar.fillAmount = (float)playerHp / 60;
     }
 }
