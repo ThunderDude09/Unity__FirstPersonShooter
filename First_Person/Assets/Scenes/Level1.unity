@@ -391,10 +391,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515829826}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.85}
+  m_LocalPosition: {x: 0, y: -0.61, z: 0.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1842105361}
+  m_Father: {fileID: 672575072}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &613497860
@@ -474,7 +474,7 @@ GameObject:
   m_Component:
   - component: {fileID: 672575072}
   m_Layer: 0
-  m_Name: lookUpDown
+  m_Name: LookUpDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -492,6 +492,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1993454224}
+  - {fileID: 515829827}
   m_Father: {fileID: 1653876733}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1148,8 +1149,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -435.29, y: 245.35}
-  m_SizeDelta: {x: 45.42768, y: 24.290085}
+  m_AnchoredPosition: {x: -219.24, y: 123.62}
+  m_SizeDelta: {x: 33.69426, y: 18.761978}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1270819547
 MonoBehaviour:
@@ -1172,10 +1173,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 1
+    m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -1376,7 +1377,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1270819546}
-  - {fileID: 1692263081}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1644,86 +1644,6 @@ Transform:
   m_Father: {fileID: 1842105361}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1692263080
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1692263081}
-  - component: {fileID: 1692263083}
-  - component: {fileID: 1692263082}
-  m_Layer: 5
-  m_Name: Text (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1692263081
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1692263080}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1353336974}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 321.8, y: 235.2}
-  m_SizeDelta: {x: 272.32666, y: 44.4996}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1692263082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1692263080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.8742516, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 40
-    m_Alignment: 2
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Press G to lock mouse cusor to the screen
-
-    Pess H to unlock it'
---- !u!222 &1692263083
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1692263080}
-  m_CullTransparentMesh: 0
 --- !u!1 &1701571389
 GameObject:
   m_ObjectHideFlags: 0
@@ -2039,13 +1959,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotSpeed: 5
   rotSpeed2: -5
-  CameraPivot: {fileID: 1653876733}
   lookUpDown: {fileID: 672575072}
   moveSpeed: 10
   jumpSpeed: 7
   cam: {fileID: 1993454224}
+  goToLevel2: 2
+  playerHp: 60
   goToLevel: 2
-  PlayerHp: 60
   isGrounded: 0
 --- !u!65 &1842105358
 BoxCollider:
@@ -2119,7 +2039,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1653876733}
-  - {fileID: 515829827}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2151,13 +2070,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381d906a552f5f34f81b82ef439b8767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotSpeed: 5
-  rotSpeed2: -5
   bullet: {fileID: 2499738512369732557, guid: 525b7e68c40ce704e90ebddb76dbb10c, type: 3}
   gunBarrel: {fileID: 515829827}
-  gunBody: {fileID: 0}
-  bulletSpeed: 20
+  bulletSpeed: 40
+  goToLevel: 0
   ammo: 30
+  count: 3
 --- !u!1 &1842267448
 GameObject:
   m_ObjectHideFlags: 0

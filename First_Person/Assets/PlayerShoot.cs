@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class PlayerShoot : MonoBehaviour
 {
+    public static PlayerShoot instance;
     [SerializeField]
     GameObject bullet;
 
@@ -16,46 +16,51 @@ public class PlayerShoot : MonoBehaviour
     float bulletSpeed;
 
     [SerializeField]
+    int goToLevel = 0;
+
+    [SerializeField]
     //Image bar;
     public int ammo = 30;
+
+    [SerializeField]
+    int count = 3;
 
     // Start is called before the first frame update
     void Start()
     {
-        //UpdateHUD();
         
+        UpdateHUD();
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetButtonDown("Fire1"))
         {
-            
-
             Vector3 bulletDirection = transform.forward * bulletSpeed;
             GameObject b = Instantiate(bullet, gunBarrel.position, transform.rotation);
             b.GetComponent<Rigidbody>().velocity = bulletDirection;
-            //ammo -= 1;
-
-            //UpdateHUD();
-
-            if (ammo > 0)
-            {
-                
-            }
         }
     }
 
-    /*public void UpdateAmmo()
+    public void UpdateAmmo()
     {
         ammo = 30;
         UpdateHUD();
     }
 
+    public void UpdateEnemy()
+    {
+        count = count - 1;
+        Debug.Log(count);
+        if (count == 0)
+        {
+            SceneManager.LoadScene(goToLevel);
+        }
+    }
+
     void UpdateHUD()
     {
         //bar.fillAmount = (float)ammo / 30;
-    }*/
+    }
 }
