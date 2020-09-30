@@ -37,7 +37,7 @@ public class PlayerShoot : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Vector3 bulletDirection = transform.forward * bulletSpeed;
+            Vector3 bulletDirection = gunBarrel.forward * bulletSpeed;
             GameObject b = Instantiate(bullet, gunBarrel.position, transform.rotation);
             b.GetComponent<Rigidbody>().velocity = bulletDirection;
         }
